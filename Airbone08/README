@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+interface AppProps {
+  name: string;
+  surname: string;
+  email: string;
+}
+
+function App() {
+  const [user, setUser] = useState<AppProps | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchData = () => {
+    setIsLoading(true);
+
+    // Simulando um processo de carregamento assíncrono, por exemplo, uma requisição AJAX.
+    setTimeout(() => {
+      setUser({
+        name: 'João',
+        surname: 'Silva',
+        email: 'joao@example.com',
+      });
+      setIsLoading(false);
+    }, 2000); // Simula o carregamento durante 2 segundos (2000 milissegundos)
+  };
+
+  return (
+    <div>
+      <button onClick={fetchData}>Buscar Dados</button>
+      <div>
+        {isLoading ? (
+          <strong>Aguarde...</strong>
+        ) : user ? (
+          <div>
+            <h3>Usuário:</h3>
+            <p>Nome: {user.name}</p>
+            <p>Sobrenome: {user.surname}</p>
+            <p>Email: {user.email}</p>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+export default App;
