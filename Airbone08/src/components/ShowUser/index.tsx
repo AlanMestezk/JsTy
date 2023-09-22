@@ -1,4 +1,4 @@
-
+import style from './ShowUser.module.css'
 interface ShowProps{
     name: string | undefined | null | number
     surname: string | undefined | null | number
@@ -9,23 +9,29 @@ export const ShowUser = ({name, surname, email}: ShowProps)=>{
 
     return(
         <>
-            <main>
-              <hr />
-              
-
+            <main className={style.container}>
                 <h2>Usuário cadastrado</h2>
 
-                <strong>Nome:  {name}</strong>
-                <br />
+                <div className={style.containerData}>
 
-                <strong>Apelido: {surname}</strong>
-                <br />
-                
-                <strong>E-mail: {email}</strong>
+                  <div className={style.dataUser}>
+                    <h5>Nome: </h5>
+                    <strong className={style.infoUser}>{name}</strong>
+                  </div>
 
-              <br />
-              <br />
-              <hr/>
+                  <div className={style.dataUser}>
+                    <h5>Apelido: </h5>
+                    <strong className={style.infoUser}>{surname}</strong>
+                  </div>
+
+                  <div className={style.dataUser}>
+                    <h5>E-mail: </h5>
+                    <strong className={style.infoUser}>{email}</strong>
+                  </div>
+
+                </div>
+
+
             </main>
         </>
     )

@@ -1,5 +1,7 @@
 import './App.css';
 
+import { FcApproval } from "react-icons/fc"
+
 
 import { useState, useEffect } from 'react';
 import { ShowUser }            from './components/ShowUser';
@@ -62,7 +64,7 @@ function App() {
 
   return (
     <>
-      {cadastreClicked && <div>Novo usuário cadastrado</div>}
+      {cadastreClicked && <h3>Novo usuário cadastrado <FcApproval/></h3>}
 
       {showItem ? (
         <main>
@@ -78,7 +80,7 @@ function App() {
         <>
           <hr />
           <br />
-          <h3>Cadastre o usuário</h3>
+          <h2>Cadastre o usuário</h2>
           <form>
             <input
               value={name}
@@ -119,6 +121,7 @@ function App() {
           ) : (
             <strong>...</strong>
           )}
+
         </>
       )}
     </>

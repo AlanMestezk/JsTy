@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    width: 400px;
+    margin: 30px 12px 30px;
+    border-radius: 50px;
+}
+
+.container h2 {
+    color: black;
+}
+
+.containerData {
+    padding: 20px;
+    margin-top: -40px;
+}
+
+.dataUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dataUser h5,
+.infoUser {
+    color: black;
+}
+
+.dataUser .infoUser {
+    margin-top: -20px;
+}
